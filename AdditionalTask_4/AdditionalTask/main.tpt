@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+   background-color:{VAR="background"};
+}
+
+.header {
+  background-color: {VAR="colour"};
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: {VAR="colour"};
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: {VAR="colourCheck"};
+}
+
+.aside {
+  background-color:{VAR="colour"};
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: {VAR="colour"};
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+div.container {
+  width: 96%;
+  max-width: 960px;
+  margin: 0 auto; /* центрируем основной контейнер */
+}
+img {
+  width: 600; /* ширина картинки */
+  height: 400; /* высота картинки */
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+</head>
+<body link="white" vlink="white" alink="white">
+<body>
+
+<div class="header">
+  <h1>{VAR="header"}</h1>
+</div>
+
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+    <ul>
+	<!--
+      <li>Growing</li>
+      <li>Variety</li>
+      <li>Cooking</li> -->
+	  <li>{DB="0"}</li>
+      <li>{DB="1"}</li>
+      <li>{DB="2"}</li>
+    </ul>
+  </div>
+
+  <div class="col-6 col-s-9">
+    <h1>{CONFIG="title"}</h1>
+    <p>{FILE="2.txt"}</p>
+	<div class="container">
+  <img src={VAR="photo1"}  width="270" height="270" align ="left" />
+</div>
+	
+  </div>
+
+  <div class="col-3 col-s-12">
+    <div class="aside">
+      <h2>{FILE="1.txt"}</h2>
+      <p>Кофе содержит более 1200 химических соединений, более половины из которых отвечают за вкусовые качества получаемого напитка.</p>
+      <h2>______________________________</h2>
+      <p>Одно дерево кофе живет 60-70 лет.</p>
+      <h2>______________________________</h2>
+      <p>Смертельная доза кофеина равно примерно 100 чашкам кофе.</p>
+    </div>
+  </div>
+</div>
+
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div class="footer">
+  <p>&#169; {IF "2020">"2019"} 2020 {ELSE} 2019  {ENDIF} <a href={VAR="inst"} > KSENIA TSYBULKO </a></p>
+</div>
+
+</body>
+</html>
